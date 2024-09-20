@@ -1,21 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const taskInput = document.getElementById('taskInput');
-    const addButton = document.getElementById('addButton');
-    const mazhar = document.getElementById('mazhar');
-
-    addButton.addEventListener('click', () => {
-        const taskText = taskInput.value.trim();
-
-        if (taskText === '') {
-            alert('Lütfen bir görev girin.');
-            return;
-        }
-
-        const listItem = document.createElement('li');
-        listItem.textContent = taskText;
-        mazhar.appendChild(listItem);
-
-        taskInput.value = ''; 
-        taskInput.focus();    
-    });
-});
+document.getElementById('ekleBtn').onclick = () => {
+    const text = document.getElementById('gorev').value.trim();
+    if (text) {
+        document.getElementById('gorevListesi').innerHTML += `<li>${text}</li>`;
+        document.getElementById('gorev').value = '';
+    } else {
+        alert('Görev girin.');
+    }
+};
